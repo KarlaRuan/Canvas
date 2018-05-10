@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas</title>
+	<style media="screen">
+		canvas{border:solid;}
+	</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<script>
+		let canvas=document.getElementById('canvas');
+		canvas.width=800;
+		canvas.height=600;
+
+		let contexto=canvas.getContext('2d');  <!-- Objeto contexto es para hacer cosas en el canvas-->
+		contexto.fillRect(20,20,200,200);
+	</script>
+</body>
+</html>
