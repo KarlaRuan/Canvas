@@ -13,16 +13,33 @@
 		canvas.width=800;
 		canvas.height=600;
 
-		let contexto=canvas.getContext('2d'); 
+		let context=canvas.getContext('2d'); 
 
-		contexto.fillRect(220,200,200,200);
+		/*contexto.fillRect(220,200,200,200);
 		contexto.strokeRect(10,20,200,200);
 		
 		setTimeout(function(){
 			contexto.fillStyle='red';
 			contexto.fillRect(220,200,50,50);
 			contexto.clearRect(290,280,50,50);
-		},1000);
+		},1000);*/
+		//Para dibujar un circulo es mediante arcos
+		
+
+		//context.arc(centerX,centerY,radio,anguloInicial,anguloFinal,true a la inversa de las agujas del reloj);
+		//context.arc(200,200,80,0,Math.PI * 2);  //Circulo completo o Math.PI medio circulo
+		let finalAngel=0;
+
+		setInterval(function(){
+			finalAngel+=.01;
+
+			context.beginPath();
+
+			context.arc(100,100,90,0,Math.PI * finalAngel);
+			context.closePath();
+
+			context.fill();
+		},1000/20);
 
 	</script>
 </body>
