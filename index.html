@@ -15,7 +15,7 @@
 
 		let context=canvas.getContext('2d'); 
 
-		/*contexto.fillRect(220,200,200,200);
+		/*contexto.fillRect(220,200,200,200);---------------Esto fue para dibujar rectangulos
 		contexto.strokeRect(10,20,200,200);
 		
 		setTimeout(function(){
@@ -23,12 +23,13 @@
 			contexto.fillRect(220,200,50,50);
 			contexto.clearRect(290,280,50,50);
 		},1000);*/
-		//Para dibujar un circulo es mediante arcos
-		
 
+		//Para dibujar un circulo es mediante arcos
 		//context.arc(centerX,centerY,radio,anguloInicial,anguloFinal,true a la inversa de las agujas del reloj);
 		//context.arc(200,200,80,0,Math.PI * 2);  //Circulo completo o Math.PI medio circulo
-		let finalAngel=0;
+		
+
+		/*let finalAngel=0;---------------Esta parte fue para crear una animacion; se va creando el circulo
 
 		setInterval(function(){
 			finalAngel+=.01;
@@ -39,7 +40,26 @@
 			context.closePath();
 
 			context.fill();
-		},1000/20);
+		},1000/20);*/
+
+		//------------Path; Define a un vector el cual puede estar lleno o contorneado por el canvas
+		//Comando mas comunes beginPath(), closePath(), moveTo(), lineTo(), arcTo()
+		context.beginPath(); //Se define una nueva figura
+		context.moveTo(100,20); 
+		context.lineTo(100,60);
+		//context.closePath(); //traza una linea desde el punto inicial al punto final
+		context.stroke(); //rellena el path
+
+		context.beginPath();
+		context.moveTo(200,20);
+		context.lineTo(200,60);
+		context.stroke();
+
+		context.beginPath();
+		context.arc(150,80,40,0,Math.PI);
+		context.moveTo(200,200);
+		context.arcTo(400,200,400,400,200);
+		context.stroke();
 
 	</script>
 </body>
