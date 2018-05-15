@@ -96,7 +96,36 @@
 
 		context.fillStyle="yellow";
 		context.fillRect(40,450,200,100);
+//___________________________________Texto
+		context.save();
 
+		context.globalAlpha=1;
+		context.fillStyle="pink";
+		context.strokeStyle="green";
+		context.font="800 40px Arial";
+		//context.font="italic 45px Roboto";
+		context.fillText("Karla Yesenia",450,100);
+		context.strokeText("Ruan Padilla",450,180);
+
+		context.restore();
+//___________________________________Sombras
+//	shadowColor, shadowOffsetX, shadowOffsetY, shadowBlur (desenfoque)
+		context.save();
+
+		context.globalAlpha=1;
+		context.fillStyle='rgb( 121, 122, 13)';
+		context.font="800 40px Time New Roman";
+
+		context.shadowColor='rgba( 67, 68, 17 ,.5)';
+		context.shadowOffsetX=4;
+		context.shadowOffsetY=4;
+		context.shadowBlur=5;
+
+		context.fillText("Hola mundo",450,250);
+		context.fillRect(500,300,50,50);
+		context.strokeRect(500,380,50,50);
+
+		context.restore();
 
 	</script>
 </body>
