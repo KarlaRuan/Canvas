@@ -15,6 +15,13 @@
 
 		let context=canvas.getContext('2d'); 
 
+		//DEGRADADO   ((x1 y x2 donde inicia el degradado)(x1 y x2 donde finaliza el degradado))
+		let linealGradient=context.createLinearGradient(350,400,400,500);
+
+		linealGradient.addColorStop(0,'#2979ff');
+		linealGradient.addColorStop(.5,'red');
+
+
 		/*contexto.fillRect(220,200,200,200);---------------Esto fue para dibujar rectangulos
 		contexto.strokeRect(10,20,200,200);
 		
@@ -44,22 +51,37 @@
 
 		//------------Path; Define a un vector el cual puede estar lleno o contorneado por el canvas
 		//Comando mas comunes beginPath(), closePath(), moveTo(), lineTo(), arcTo()
+
+		context.globalAlpha=.6; //Modifica todo apartir de que se puso esta instrucción
+		context.lineWidth=5;  //Modifica el grosor de la linea en pixeles
+		context.lineCap='butt'; //Final de la linea en cuadrado viene por default
+		//context.lineCap='round'; //Final de la linea redondeado
+		//context.lineCap='square'; //Agrega un cuadrado al final de las lineas (se hacen mas largas)
+
 		context.beginPath(); //Se define una nueva figura
 		context.moveTo(100,20); 
 		context.lineTo(100,60);
 		//context.closePath(); //traza una linea desde el punto inicial al punto final
+		context.strokeStyle="#2979ff";
 		context.stroke(); //rellena el path
 
 		context.beginPath();
 		context.moveTo(200,20);
 		context.lineTo(200,60);
+		context.strokeStyle='rgba(200,50,50,1)';
 		context.stroke();
 
 		context.beginPath();
 		context.arc(150,80,40,0,Math.PI);
 		context.moveTo(200,200);
 		context.arcTo(400,200,400,400,200);
+		context.strokeStyle="black";
 		context.stroke();
+
+		context.beginPath();
+		context.arc(400,400,40,0,Math.PI*2);
+		context.fillStyle=linealGradient;
+		context.fill();
 
 	</script>
 </body>
