@@ -15,6 +15,8 @@
 
 		let context=canvas.getContext('2d');
 
+		context.save();
+
 		context.fillRect(200,200,200,200);//---------------Esto fue para dibujar rectangulos
 		//context.strokeRect(10,20,200,200);
 		
@@ -24,10 +26,11 @@
 			context.clearRect(290,290,50,50);
 		},1000);
 
+		context.restore();
 		//Para dibujar un circulo es mediante arcos
 		//context.arc(centerX,centerY,radio,anguloInicial,anguloFinal,true a la inversa de las agujas del reloj);
 		//context.arc(200,200,80,0,Math.PI * 2);  //Circulo completo o Math.PI medio circulo
-		
+		context.save();
 
 		let finalAngel=0;//---------------Esta parte fue para crear una animacion; se va creando el circulo
 
@@ -36,12 +39,14 @@
 
 			context.beginPath();
 
+			context.fillStyle="blue";
 			context.arc(300,100,80,0,Math.PI * finalAngel);
 			context.closePath();
 
 			context.fill();
 		},1000/50);
 
+		context.restore();
 //____________________________Path; Define a un vector el cual puede estar lleno o contorneado por el canvas
 		//Comando mas comunes beginPath(), closePath(), moveTo(), lineTo(), arcTo()
 
@@ -82,8 +87,15 @@
 		context.fillStyle=linealGradient;
 		context.fill();
 //___________________________________Save and Restore
+		context.save();
+
 		context.fillStyle="green";
 		context.fillRect(20,400,150,150);
+
+		context.restore();
+
+		context.fillStyle="yellow";
+		context.fillRect(40,450,200,100);
 
 
 	</script>
